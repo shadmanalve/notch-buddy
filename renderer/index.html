@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'">
+<title>Notch Buddy</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 10v3.5l2.2 2.2M9.5 2.5h5"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2.5" width="8" height="4" rx="1"/><path d="M16 4.5h2a2 2 0 0 1 2 2V20a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6.5a2 2 0 0 1 2-2h2"/></symbol>
+    <symbol id="i-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.2v13.6a1 1 0 0 0 1.5.86l10.6-6.8a1 1 0 0 0 0-1.72L9.5 4.34A1 1 0 0 0 8 5.2z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><rect fill="currentColor" x="6" y="4.5" width="4" height="15" rx="1.2"/><rect fill="currentColor" x="14" y="4.5" width="4" height="15" rx="1.2"/></symbol>
+    <symbol id="i-next" viewBox="0 0 24 24"><path fill="currentColor" d="M5 6.2v11.6a1 1 0 0 0 1.55.83l8.4-5.8a1 1 0 0 0 0-1.66l-8.4-5.8A1 1 0 0 0 5 6.2z"/><rect fill="currentColor" x="16.5" y="5" width="2.5" height="14" rx="1"/></symbol>
+    <symbol id="i-prev" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.2v11.6a1 1 0 0 1-1.55.83l-8.4-5.8a1 1 0 0 1 0-1.66l8.4-5.8A1 1 0 0 1 19 6.2z"/><rect fill="currentColor" x="5" y="5" width="2.5" height="14" rx="1"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1L3.5 8.5"/><path d="M3.5 3.5v5h5"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><path d="M17 14v6M14 17h6"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12.5a7.5 7.5 0 0 1-11.2 6.5L4 20l1.1-4.3A7.5 7.5 0 1 1 20 12.5z"/><path d="M9 11.5h.01M12.5 11.5h.01M16 11.5h.01" stroke-width="2.6"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><rect fill="currentColor" x="6.5" y="6.5" width="11" height="11" rx="2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19 7"/></symbol>
+  </defs>
+</svg>
+
+<div id="stage" data-view="home">
+  <!-- the creature's head (this is the notch) -->
+  <div id="island" class="collapsed">
+    <div class="compact">
+      <div class="peek peek-left" id="peekLeft"></div>
+      <div class="face" id="face">
+        <div class="eyes" id="eyes" data-style="classic"><i class="eye"></i><i class="eye"></i></div>
+        <svg class="mouth" viewBox="0 0 24 12"><path id="mouthPath" d="M6 4 Q12 9 18 4"/></svg>
+        <span class="blush l"></span><span class="blush r"></span>
+      </div>
+      <div class="peek peek-right" id="peekRight"></div>
+      <div class="head-info left"><b id="time"></b><span id="date"></span></div>
+      <div class="head-info right"><div class="battery" id="battery" title="Battery"><i></i><i></i><i></i><i></i><span class="bolt">⚡</span></div></div>
+    </div>
+  </div>
+  <div class="mini-eyes" id="miniEyes" hidden><i></i><i></i></div>
+
+  <!-- everything it says -->
+  <div class="bubbles">
+    <div class="home-bubbles">
+      <article class="bubble b-claude" data-go="claude" data-gaze="left">
+        <div class="ring-wrap sm" id="cRing">
+          <svg class="ring" viewBox="0 0 44 44"><circle class="ring-bg" cx="22" cy="22" r="18"/><circle class="ring-fg" id="cRingFg" cx="22" cy="22" r="18"/></svg>
+          <svg class="spinner"><use href="#i-spark"/></svg>
+          <span class="ring-label" id="cRingLabel">–</span>
+        </div>
+        <div class="say">
+          <div class="who">Claude Code</div>
+          <div class="line" id="cSay">Waiting for Claude…</div>
+        </div>
+        <div class="b-big" id="cBig"></div>
+      </article>
+
+      <article class="bubble b-music" id="musicCard" data-go="music" data-gaze="right">
+        <div class="disc" id="mArt"><svg><use href="#i-music"/></svg><img alt=""><span class="hole"></span></div>
+        <div class="say">
+          <div class="who" id="mWho">Music</div>
+          <div class="line song" id="mTitle">It's quiet in here</div>
+          <div class="sub" id="mArtist">Play something</div>
+        </div>
+        <button class="round-btn light" id="mToggle" data-stop><svg><use href="#i-play"/></svg></button>
+      </article>
+
+      <article class="bubble b-focus" data-go="focus" data-gaze="down">
+        <svg class="b-icon"><use href="#i-timer"/></svg>
+        <div class="b-time" id="fBig">25:00</div>
+        <div class="line" id="fSub">Ready when you are</div>
+        <button class="round-btn light" id="fToggle" data-stop><svg><use href="#i-play"/></svg></button>
+      </article>
+
+      <div class="pebbles" id="nav" data-gaze="down">
+        <div class="quick" id="quick"></div>
+        <span class="peb-sep"></span>
+        <button class="pebble ask-peb" data-go="ask" title="Ask Claude (Ctrl+Alt+A)"><svg><use href="#i-chat"/></svg></button>
+        <button class="pebble" data-go="launch" title="Launchers"><svg><use href="#i-rocket"/></svg></button>
+        <button class="pebble" data-go="clipboard" title="Clipboard"><svg><use href="#i-clip"/></svg></button>
+        <button class="pebble" data-go="notes" title="Notes"><svg><use href="#i-note"/></svg></button>
+        <button class="pebble" data-go="settings" title="Settings"><svg><use href="#i-gear"/></svg></button>
+      </div>
+    </div>
+
+    <div class="big-bubble">
+      <button class="back" data-go="home" title="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="big-title" id="bigTitle"></div>
+      <button class="big-action" id="askClear" title="Start a new conversation">New chat</button>
+      <main class="views">
+
+      <!-- CLAUDE -->
+      <section class="view" data-view="claude">
+        <div class="claude-view">
+          <div class="cv-left">
+            <div class="ring-wrap lg" id="cvRing">
+              <svg class="ring" viewBox="0 0 44 44"><circle class="ring-bg" cx="22" cy="22" r="18"/><circle class="ring-fg" id="cvRingFg" cx="22" cy="22" r="18"/></svg>
+              <svg class="spinner"><use href="#i-spark"/></svg>
+              <span class="ring-label" id="cvRingLabel">–</span>
+            </div>
+            <div class="cv-project" id="cvProject">Claude Code</div>
+            <div class="cv-status" id="cvStatus">Not connected</div>
+            <div class="cv-tool" id="cvTool"></div>
+            <div class="cv-stats">
+              <div><b id="cvElapsed">0:00</b><span>this turn</span></div>
+              <div><b id="cvJobs">0</b><span>today</span></div>
+            </div>
+          </div>
+          <div class="cv-right">
+            <div class="chips" id="cvSessions"></div>
+            <ul class="log" id="cvLog"></ul>
+            <div class="empty" id="cvEmpty">
+              <p>Connect Claude Code to see what it's doing live.</p>
+              <button class="pill-btn" id="installHooks">Install Claude Code hooks</button>
+              <p class="hint" id="hookHint"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MUSIC -->
+      <section class="view" data-view="music">
+        <div class="music-view" id="musicView">
+          <div class="art lg" id="mvArt"><svg><use href="#i-music"/></svg><img alt=""></div>
+          <div class="mv-main">
+            <div class="mv-app" id="mvApp">No media</div>
+            <div class="mv-title" id="mvTitle">Nothing playing</div>
+            <div class="mv-artist" id="mvArtist">Start music in Spotify, a browser or any player</div>
+            <div class="progress"><div class="progress-fill" id="mvFill"></div></div>
+            <div class="times"><span id="mvPos">0:00</span><span id="mvDur">0:00</span></div>
+            <div class="controls">
+              <button class="ctl" data-media="prev"><svg><use href="#i-prev"/></svg></button>
+              <button class="round-btn light xl" id="mvToggle"><svg><use href="#i-play"/></svg></button>
+              <button class="ctl" data-media="next"><svg><use href="#i-next"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOCUS -->
+      <section class="view" data-view="focus">
+        <div class="focus-view">
+          <div class="ring-wrap xl" id="fvRing">
+            <svg class="ring" viewBox="0 0 44 44"><circle class="ring-bg" cx="22" cy="22" r="19"/><circle class="ring-fg" id="fvRingFg" cx="22" cy="22" r="19"/></svg>
+            <div class="fv-center"><div class="fv-time" id="fvTime">25:00</div><div class="fv-mode" id="fvMode">Focus</div></div>
+          </div>
+          <div class="fv-side">
+            <div class="seg" id="fvPresets">
+              <button data-min="15">15</button><button data-min="25">25</button><button data-min="50">50</button>
+            </div>
+            <div class="controls">
+              <button class="ctl" id="fvReset" title="Reset"><svg><use href="#i-reset"/></svg></button>
+              <button class="round-btn light xl" id="fvToggle"><svg><use href="#i-play"/></svg></button>
+              <button class="ctl text" id="fvSkip" title="Skip">Skip</button>
+            </div>
+            <div class="fv-done"><b id="fvDone">0</b> focus sessions today</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ASK -->
+      <section class="view" data-view="ask">
+        <div class="ask-view">
+          <div class="ask-log" id="askLog"></div>
+          <div class="ask-empty" id="askEmpty">
+            <div class="ask-hello">Ask me anything. I'll answer right here.</div>
+            <div class="ask-sugs">
+              <button data-sug="Explain this in simple words">Explain this simply</button>
+              <button data-sug="Find the bug in this and suggest a fix">Find the bug</button>
+              <button data-sug="Write a short, friendly reply to this">Draft a reply</button>
+              <button data-sug="Summarize this in 3 bullet points">Summarize</button>
+            </div>
+          </div>
+          <div class="ask-bar">
+            <button class="clip-chip" id="askClip" title="Include what's on your clipboard"><svg><use href="#i-clip"/></svg><span>Clipboard</span></button>
+            <textarea id="askInput" rows="1" placeholder="Ask Claude…" spellcheck="false"></textarea>
+            <button class="round-btn light" id="askSend" title="Send (Enter)"><svg><use href="#i-send"/></svg></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- LAUNCH -->
+      <section class="view" data-view="launch">
+        <div class="launch-view">
+          <div class="launch-grid" id="launchGrid"></div>
+          <div class="editor" id="editor">
+            <div class="ed-left">
+              <div class="licon ed-icon" id="edIcon" title="Choose an image"></div>
+              <div class="emojis" id="edEmojis"></div>
+              <button class="ghost-btn" id="edIconFromApp">Use first app's icon</button>
+            </div>
+            <div class="ed-right">
+              <input class="ed-name" id="edName" placeholder="Launcher name" maxlength="24">
+              <ul class="ed-apps" id="edApps"></ul>
+              <div class="ed-row">
+                <button class="ghost-btn" id="edAddApps">+ Apps or files</button>
+                <button class="ghost-btn" id="edAddFolder">+ Folder</button>
+                <input class="ed-url" id="edUrl" placeholder="https://… then Enter">
+              </div>
+              <div class="ed-row">
+                <button class="ghost-btn danger" id="edDelete">Delete</button>
+                <span class="grow"></span>
+                <button class="ghost-btn" id="edCancel">Cancel</button>
+                <button class="pill-btn sm" id="edSave">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLIPBOARD -->
+      <section class="view" data-view="clipboard">
+        <div class="list-view">
+          <div class="lv-head"><span>Clipboard history</span><button class="link-btn" id="clipClear">Clear</button></div>
+          <ul class="clips" id="clips"></ul>
+          <div class="empty small" id="clipsEmpty">Copy some text and it'll show up here. Click an item to copy it again.</div>
+        </div>
+      </section>
+
+      <!-- NOTES -->
+      <section class="view" data-view="notes">
+        <div class="list-view">
+          <div class="lv-head"><span>Scratchpad</span><span class="saved" id="notesSaved">Saved</span></div>
+          <textarea id="notes" spellcheck="false" placeholder="Jot something down…"></textarea>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="view" data-view="settings">
+        <div class="list-view settings">
+          <div class="set-title">Eyes</div>
+          <div class="eye-styles" id="eyeStyles"></div>
+          <div class="set-title">Theme</div>
+          <div class="themes" id="themes"></div>
+          <div class="set-title">Font</div>
+          <div class="fonts" id="fonts">
+            <button class="font-opt" data-font="claude">Claude-style</button>
+            <button class="font-opt" data-font="sans">Clean sans</button>
+            <button class="font-opt" data-font="segoe">Windows</button>
+          </div>
+          <div class="set-title">Ask Claude</div>
+          <div class="row"><span>Model</span><div class="seg sm" id="modelSeg"><button data-model="default">Default</button><button data-model="haiku">Haiku</button><button data-model="sonnet">Sonnet</button><button data-model="opus">Opus</button></div></div>
+          <div class="set-title">Staying out of the way</div>
+          <div class="row"><span>Position</span><div class="seg sm" id="posSeg"><button data-pos="left">Left</button><button data-pos="center">Center</button><button data-pos="right">Right</button></div></div>
+          <div class="row"><span>Open after resting</span><div class="seg sm" id="delaySeg"><button data-delay="250">Quick</button><button data-delay="450">Normal</button><button data-delay="800">Slow</button></div></div>
+          <label class="row"><span>Fade when passing over</span><input type="checkbox" data-setting="ghost"><i class="switch"></i></label>
+          <div class="set-title">General</div>
+          <label class="row"><span>Keep island open</span><input type="checkbox" data-setting="pinned"><i class="switch"></i></label>
+          <label class="row"><span>Launch at login</span><input type="checkbox" data-setting="launchAtLogin"><i class="switch"></i></label>
+          <label class="row"><span>Eyes follow the cursor</span><input type="checkbox" data-setting="followCursor"><i class="switch"></i></label>
+          <label class="row"><span>Pop open when Claude needs you</span><input type="checkbox" data-setting="expandOnAttention"><i class="switch"></i></label>
+          <div class="row"><span id="hooksRow">Claude Code hooks</span><button class="pill-btn sm" id="installHooks2">Install</button></div>
+          <div class="row"><span class="muted">Ctrl+Alt+Space toggles the island</span><button class="pill-btn sm danger" id="quitBtn">Quit</button></div>
+        </div>
+      </section>
+          </main>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

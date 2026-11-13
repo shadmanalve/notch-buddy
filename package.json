@@ -1,0 +1,58 @@
+{
+  "name": "notch-buddy",
+  "productName": "Notch Buddy",
+  "version": "1.5.0",
+  "description": "A tiny creature that lives in your Windows notch: Claude Code status, Ask Claude, music, focus timer, launchers, clipboard and notes.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "install-hooks": "node scripts/install-hooks.js",
+    "uninstall-hooks": "node scripts/install-hooks.js --uninstall",
+    "dist": "electron-builder --win nsis --x64"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "dev.notch-buddy.app",
+    "productName": "Notch Buddy",
+    "asarUnpack": [
+      "scripts/**"
+    ],
+    "files": [
+      "ask.js",
+      "main.js",
+      "preload.js",
+      "renderer/**",
+      "scripts/**",
+      "assets/**"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "Notch Buddy",
+      "runAfterFinish": true,
+      "installerIcon": "assets/icon.ico",
+      "uninstallerIcon": "assets/icon.ico",
+      "artifactName": "Notch-Buddy-Setup-${version}.exe"
+    },
+    "publish": null
+  },
+  "author": "notch-buddy contributors",
+  "license": "MIT"
+}
